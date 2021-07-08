@@ -138,7 +138,6 @@ dmypy.json
 cython_debug/
 
 .vscode/
-/src/userData
-/src/resExamples
-/output
-/src/output
+userData/
+resExamples
+output
