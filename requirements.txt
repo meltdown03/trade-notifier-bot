@@ -1,0 +1,7 @@
+discord.py
+webdriver-manager
+tda-api
+selenium
+requests
+xmltodict
+oauthlib
