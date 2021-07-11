@@ -8,6 +8,7 @@ from const import TOKEN_PATH, REDIRECT_URI
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from parsers import *
+
 class BotUser():
 
   def __init__(self, webhook, accountID, apiKey):
