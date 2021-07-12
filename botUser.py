@@ -4,10 +4,11 @@ import discord
 
 from tda.auth import easy_client
 from tda.streaming import StreamClient
-from const import TOKEN_PATH, REDIRECT_URI
+from const import TOKEN_PATH, REDIRECT_URI, BOT_NICK
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from parsers import *
+
 
 class BotUser():
 
@@ -56,7 +57,7 @@ class BotUser():
       msgData = msg['MESSAGE_DATA']
       if msgData:
         parsedDict = xmltodict.parse(msgData)
-        rawJsonMSG = '```json\n' + json.dumps(parsedDict, indent=4) + '\n```'
+        rawJsonMSG = '```json\n' + json.dumps(parsedDict, indent=2) + '\n```'
 
         msgToSend = ''
         if msgType == 'OrderEntryRequest':
@@ -70,7 +71,7 @@ class BotUser():
 
         print('Parsed Response JSON:\n', rawJsonMSG)
         try:
-          self._webhook.send(msgToSend, username='TDA Trade Notifier')
+          self._webhook.send(msgToSend, username=BOT_NICK)
         except discord.errors.HTTPException as e:
           print('Discord HTTPException: ', e, '\nMsg Attempt: ', msgToSend)
 
