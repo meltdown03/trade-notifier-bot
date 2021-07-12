@@ -62,8 +62,8 @@ class BotUser():
         msgToSend = ''
         if msgType == 'OrderEntryRequest':
           # Disabled this for now, needs more formatted info to be useful
-          msgToSend = orderEntryRequestFormatter(parsedDict)
-
+#          msgToSend = orderEntryRequestFormatter(parsedDict)
+          break
         elif msgType == 'OrderFill':
           msgToSend = orderFillFormatter(parsedDict)
         else:
